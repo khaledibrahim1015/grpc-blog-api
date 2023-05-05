@@ -25,9 +25,9 @@ public static partial class BlogReflection {
           "CgpibG9nLnByb3RvIkUKBEJsb2cSCgoCaWQYASABKAkSEQoJYXV0aG9yX2lk",
           "GAIgASgJEg0KBXRpdGxlGAMgASgJEg8KB2NvbnRlbnQYBCABKAkiKAoRQ3Jl",
           "YXRlQmxvZ1JlcXVlc3QSEwoEYmxvZxgBIAEoCzIFLkJsb2ciKQoSQ3JlYXRl",
-          "QmxvZ1Jlc3BvbnNlEhMKBGJsb2cYASABKAsyBS5CbG9nMkIKC0Jsb2dTZXJ2",
-          "aWNlEjMKBkNyZWF0ZRISLkNyZWF0ZUJsb2dSZXF1ZXN0GhMuQ3JlYXRlQmxv",
-          "Z1Jlc3BvbnNlIgBiBnByb3RvMw=="));
+          "QmxvZ1Jlc3BvbnNlEhMKBGJsb2cYASABKAsyBS5CbG9nMkYKC0Jsb2dTZXJ2",
+          "aWNlEjcKCkNyZWF0ZUJsb2cSEi5DcmVhdGVCbG9nUmVxdWVzdBoTLkNyZWF0",
+          "ZUJsb2dSZXNwb25zZSIAYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

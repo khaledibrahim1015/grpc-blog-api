@@ -1,4 +1,5 @@
 ﻿using Grpc.Core;
+using server.Impl;
 
 namespace server
 {
@@ -19,7 +20,10 @@ namespace server
                 {
 
                     // Register services
-
+                    Services = {BlogService.BindService(new BlogServiceImpl()),
+                    
+                    
+                    },
                     Ports = { new ServerPort("localhost", port, ServerCredentials.Insecure) }
                 };
                 server.Start();

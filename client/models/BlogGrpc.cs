@@ -50,10 +50,10 @@ public static partial class BlogService
   static readonly grpc::Marshaller<global::CreateBlogResponse> __Marshaller_CreateBlogResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CreateBlogResponse.Parser));
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Method<global::CreateBlogRequest, global::CreateBlogResponse> __Method_Create = new grpc::Method<global::CreateBlogRequest, global::CreateBlogResponse>(
+  static readonly grpc::Method<global::CreateBlogRequest, global::CreateBlogResponse> __Method_CreateBlog = new grpc::Method<global::CreateBlogRequest, global::CreateBlogResponse>(
       grpc::MethodType.Unary,
       __ServiceName,
-      "Create",
+      "CreateBlog",
       __Marshaller_CreateBlogRequest,
       __Marshaller_CreateBlogResponse);
 
@@ -68,7 +68,7 @@ public static partial class BlogService
   public abstract partial class BlogServiceBase
   {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::System.Threading.Tasks.Task<global::CreateBlogResponse> Create(global::CreateBlogRequest request, grpc::ServerCallContext context)
+    public virtual global::System.Threading.Tasks.Task<global::CreateBlogResponse> CreateBlog(global::CreateBlogRequest request, grpc::ServerCallContext context)
     {
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
@@ -103,24 +103,24 @@ public static partial class BlogService
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::CreateBlogResponse Create(global::CreateBlogRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual global::CreateBlogResponse CreateBlog(global::CreateBlogRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
-      return Create(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      return CreateBlog(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::CreateBlogResponse Create(global::CreateBlogRequest request, grpc::CallOptions options)
+    public virtual global::CreateBlogResponse CreateBlog(global::CreateBlogRequest request, grpc::CallOptions options)
     {
-      return CallInvoker.BlockingUnaryCall(__Method_Create, null, options, request);
+      return CallInvoker.BlockingUnaryCall(__Method_CreateBlog, null, options, request);
     }
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncUnaryCall<global::CreateBlogResponse> CreateAsync(global::CreateBlogRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual grpc::AsyncUnaryCall<global::CreateBlogResponse> CreateBlogAsync(global::CreateBlogRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
-      return CreateAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      return CreateBlogAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncUnaryCall<global::CreateBlogResponse> CreateAsync(global::CreateBlogRequest request, grpc::CallOptions options)
+    public virtual grpc::AsyncUnaryCall<global::CreateBlogResponse> CreateBlogAsync(global::CreateBlogRequest request, grpc::CallOptions options)
     {
-      return CallInvoker.AsyncUnaryCall(__Method_Create, null, options, request);
+      return CallInvoker.AsyncUnaryCall(__Method_CreateBlog, null, options, request);
     }
     /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -136,7 +136,7 @@ public static partial class BlogService
   public static grpc::ServerServiceDefinition BindService(BlogServiceBase serviceImpl)
   {
     return grpc::ServerServiceDefinition.CreateBuilder()
-        .AddMethod(__Method_Create, serviceImpl.Create).Build();
+        .AddMethod(__Method_CreateBlog, serviceImpl.CreateBlog).Build();
   }
 
   /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -146,7 +146,7 @@ public static partial class BlogService
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   public static void BindService(grpc::ServiceBinderBase serviceBinder, BlogServiceBase serviceImpl)
   {
-    serviceBinder.AddMethod(__Method_Create, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::CreateBlogRequest, global::CreateBlogResponse>(serviceImpl.Create));
+    serviceBinder.AddMethod(__Method_CreateBlog, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::CreateBlogRequest, global::CreateBlogResponse>(serviceImpl.CreateBlog));
   }
 
 }

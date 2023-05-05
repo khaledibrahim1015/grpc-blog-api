@@ -19,6 +19,11 @@ namespace client
 
 
 
+            // Call BlogService => and call CreateBlog 
+            CreateNewBlog(channel);
+
+
+
 
 
 
@@ -29,6 +34,26 @@ namespace client
             Console.ReadKey();
 
 
+        }
+
+
+        // Call BlogService => and call CreateBlog 
+        private static void CreateNewBlog(Channel channel)
+        {
+            var client = new BlogService.BlogServiceClient(channel);
+
+            var BlogResponse = client.CreateBlog(new CreateBlogRequest()
+            {
+                Blog = new Blog()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    AuthorId = "khaled",
+                    Content = "Hello World , this is the new blog",
+                    Title = "New Blog !"
+                }
+            });
+
+            Console.WriteLine("The Blog " + BlogResponse.Blog.Id + " Was Created");
         }
     }
 }
