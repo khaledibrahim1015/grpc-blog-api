@@ -53,6 +53,32 @@ namespace server.Impl
 
         }
 
+        public override Task<ReadBlogResponse> ReadBlog(ReadBlogRequest request, ServerCallContext context)
+        {
+            var blogId = request.BlogId;
+
+            // GetBlogById
+            
+
+            // var f= new FilterDefinitionBuilder<BsonDocument>().Eq("_id", new ObjectId(blogId))
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", new ObjectId( blogId));
+
+            var result = mongoCollection.Find(filter).FirstOrDefault();
+            if (result == null )
+                    throw new RpcException(new Status(StatusCode.NotFound, "The Blog id "+blogId+ " Not found " ))
+
+
+
+          Blog blog = new Blog()
+          {
+              AuthorId = result.GetValue("author_id").AsString,
+              Content = result.GetValue("content").AsString,
+              Title = result.GetValue("title").AsString
+          }
+
+          return new ReadBlogResponse() { Blog = blog };
+
+        }
 
 
 

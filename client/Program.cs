@@ -19,8 +19,8 @@ namespace client
 
 
 
-            // Call BlogService => and call CreateBlog 
-            CreateNewBlog(channel);
+            // 1 - Call BlogService => and call CreateBlog 
+               CreateNewBlog(channel);
 
 
 

@@ -48,6 +48,10 @@ public static partial class BlogService
   static readonly grpc::Marshaller<global::CreateBlogRequest> __Marshaller_CreateBlogRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CreateBlogRequest.Parser));
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Marshaller<global::CreateBlogResponse> __Marshaller_CreateBlogResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CreateBlogResponse.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::ReadBlogRequest> __Marshaller_ReadBlogRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ReadBlogRequest.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::ReadBlogResponse> __Marshaller_ReadBlogResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ReadBlogResponse.Parser));
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Method<global::CreateBlogRequest, global::CreateBlogResponse> __Method_CreateBlog = new grpc::Method<global::CreateBlogRequest, global::CreateBlogResponse>(
@@ -56,6 +60,14 @@ public static partial class BlogService
       "CreateBlog",
       __Marshaller_CreateBlogRequest,
       __Marshaller_CreateBlogResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::ReadBlogRequest, global::ReadBlogResponse> __Method_ReadBlog = new grpc::Method<global::ReadBlogRequest, global::ReadBlogResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "ReadBlog",
+      __Marshaller_ReadBlogRequest,
+      __Marshaller_ReadBlogResponse);
 
   /// <summary>Service descriptor</summary>
   public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -69,6 +81,12 @@ public static partial class BlogService
   {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public virtual global::System.Threading.Tasks.Task<global::CreateBlogResponse> CreateBlog(global::CreateBlogRequest request, grpc::ServerCallContext context)
+    {
+      throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::System.Threading.Tasks.Task<global::ReadBlogResponse> ReadBlog(global::ReadBlogRequest request, grpc::ServerCallContext context)
     {
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
@@ -122,6 +140,26 @@ public static partial class BlogService
     {
       return CallInvoker.AsyncUnaryCall(__Method_CreateBlog, null, options, request);
     }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::ReadBlogResponse ReadBlog(global::ReadBlogRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return ReadBlog(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::ReadBlogResponse ReadBlog(global::ReadBlogRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_ReadBlog, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::ReadBlogResponse> ReadBlogAsync(global::ReadBlogRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return ReadBlogAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::ReadBlogResponse> ReadBlogAsync(global::ReadBlogRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_ReadBlog, null, options, request);
+    }
     /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     protected override BlogServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -136,7 +174,8 @@ public static partial class BlogService
   public static grpc::ServerServiceDefinition BindService(BlogServiceBase serviceImpl)
   {
     return grpc::ServerServiceDefinition.CreateBuilder()
-        .AddMethod(__Method_CreateBlog, serviceImpl.CreateBlog).Build();
+        .AddMethod(__Method_CreateBlog, serviceImpl.CreateBlog)
+        .AddMethod(__Method_ReadBlog, serviceImpl.ReadBlog).Build();
   }
 
   /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -147,6 +186,7 @@ public static partial class BlogService
   public static void BindService(grpc::ServiceBinderBase serviceBinder, BlogServiceBase serviceImpl)
   {
     serviceBinder.AddMethod(__Method_CreateBlog, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::CreateBlogRequest, global::CreateBlogResponse>(serviceImpl.CreateBlog));
+    serviceBinder.AddMethod(__Method_ReadBlog, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ReadBlogRequest, global::ReadBlogResponse>(serviceImpl.ReadBlog));
   }
 
 }
