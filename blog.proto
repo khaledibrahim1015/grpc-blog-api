@@ -1,0 +1,27 @@
+syntax="proto3";
+
+//import  "google/protobuf/empty.proto";
+
+message Blog{
+	
+	string id=1;
+	string author_id=2;
+	string title=3;
+	string content =4;
+
+}
+
+message CreateBlogRequest{
+	Blog blog=1; // will not contain id id => Guid 
+}
+
+
+message CreateBlogResponse{
+	Blog blog=1; // will contain id => retrive blog obj
+}
+
+service BlogService{
+
+
+	rpc Create(CreateBlogRequest) returns (CreateBlogResponse) {}
+}
