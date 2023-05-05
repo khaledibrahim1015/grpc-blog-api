@@ -20,7 +20,7 @@ namespace client
 
 
             // 1 - Call BlogService => and call CreateBlog 
-              CreateNewBlog(channel);
+            //  CreateNewBlog(channel);
 
 
             // 2 - Call BlogService => and call ReadBlog
@@ -34,7 +34,9 @@ namespace client
             // 4 -  Call BlogService => and call DeleteBlog
             //    DeleteBlog(channel);
 
-           // await ListBlog(channel);
+
+            // 5 -  Call BlogService => and call ListBlog
+            // await ListBlog(channel);
 
             channel.ShutdownAsync().Wait();
             Console.ReadKey();
@@ -131,10 +133,6 @@ namespace client
 
 
         }
-
-
-
-
 
 
         private static void DeleteBlog(Channel channel)

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "q0XAqyYlqJafklxuIiKANQuHUF6uOaR3+lRYgwpd0gl8HFUrQgSkPYpx+60ZWyVPObWeanZfHVfpA/hwYOcmUA==",
+  "dgSpecHash": "38iXii8kHvDchhA8ISsRPuSLQwncg4bLdfakVa3B5p07vh3bjK+3CCXJPQ+0aPdhBHj4gC0nt1Ouh0rCYsWr7g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Waheed\\Desktop\\gRPC\\gRpcErrorHandling\\BlogGRPCApi.Server.Client\\server\\server.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,8 @@
     "C:\\Users\\Waheed\\.nuget\\packages\\google.protobuf\\3.22.4\\google.protobuf.3.22.4.nupkg.sha512",
     "C:\\Users\\Waheed\\.nuget\\packages\\grpc\\2.46.6\\grpc.2.46.6.nupkg.sha512",
     "C:\\Users\\Waheed\\.nuget\\packages\\grpc.core\\2.46.6\\grpc.core.2.46.6.nupkg.sha512",
-    "C:\\Users\\Waheed\\.nuget\\packages\\grpc.core.api\\2.46.6\\grpc.core.api.2.46.6.nupkg.sha512",
+    "C:\\Users\\Waheed\\.nuget\\packages\\grpc.core.api\\2.52.0\\grpc.core.api.2.52.0.nupkg.sha512",
+    "C:\\Users\\Waheed\\.nuget\\packages\\grpc.reflection\\2.52.0\\grpc.reflection.2.52.0.nupkg.sha512",
     "C:\\Users\\Waheed\\.nuget\\packages\\grpc.tools\\2.54.0\\grpc.tools.2.54.0.nupkg.sha512",
     "C:\\Users\\Waheed\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
     "C:\\Users\\Waheed\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",

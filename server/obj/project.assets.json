@@ -105,7 +105,7 @@
           }
         }
       },
-      "Grpc.Core.Api/2.46.6": {
+      "Grpc.Core.Api/2.52.0": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -117,6 +117,23 @@
         },
         "runtime": {
           "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.Reflection/2.52.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.22.0",
+          "Grpc.Core.Api": "2.52.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Grpc.Reflection.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Reflection.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -515,18 +532,19 @@
         "runtimes/win-x86/native/grpc_csharp_ext.x86.dll"
       ]
     },
-    "Grpc.Core.Api/2.46.6": {
-      "sha512": "Z7HJGqJYyKb53qfp1jf0wRDYs3sxOnkAFxXAW6q52LLmX/zxzjtFLI9eaWO5UC0weiWjn4iT1FzR+tj9qYZAMg==",
+    "Grpc.Core.Api/2.52.0": {
+      "sha512": "SQiPyBczG4vKPmI6Fd+O58GcxxDSFr6nfRAJuBDUNj+PgdokhjWJvZE/La1c09AkL2FVm/jrDloG89nkzmVF7A==",
       "type": "package",
-      "path": "grpc.core.api/2.46.6",
+      "path": "grpc.core.api/2.52.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "grpc.core.api.2.46.6.nupkg.sha512",
+        "README.md",
+        "grpc.core.api.2.52.0.nupkg.sha512",
         "grpc.core.api.nuspec",
-        "lib/net45/Grpc.Core.Api.dll",
-        "lib/net45/Grpc.Core.Api.pdb",
-        "lib/net45/Grpc.Core.Api.xml",
+        "lib/net462/Grpc.Core.Api.dll",
+        "lib/net462/Grpc.Core.Api.pdb",
+        "lib/net462/Grpc.Core.Api.xml",
         "lib/netstandard1.5/Grpc.Core.Api.dll",
         "lib/netstandard1.5/Grpc.Core.Api.pdb",
         "lib/netstandard1.5/Grpc.Core.Api.xml",
@@ -536,6 +554,28 @@
         "lib/netstandard2.1/Grpc.Core.Api.dll",
         "lib/netstandard2.1/Grpc.Core.Api.pdb",
         "lib/netstandard2.1/Grpc.Core.Api.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Reflection/2.52.0": {
+      "sha512": "2c29hBt8uQS7Eksbo8/4QNN3ejr7+LZdB0beU3FRRNx1UgJ6K547t57wJprGwtbUQQi/NN/czh+zrY0go+87bg==",
+      "type": "package",
+      "path": "grpc.reflection/2.52.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.reflection.2.52.0.nupkg.sha512",
+        "grpc.reflection.nuspec",
+        "lib/net462/Grpc.Reflection.dll",
+        "lib/net462/Grpc.Reflection.pdb",
+        "lib/net462/Grpc.Reflection.xml",
+        "lib/netstandard1.5/Grpc.Reflection.dll",
+        "lib/netstandard1.5/Grpc.Reflection.pdb",
+        "lib/netstandard1.5/Grpc.Reflection.xml",
+        "lib/netstandard2.0/Grpc.Reflection.dll",
+        "lib/netstandard2.0/Grpc.Reflection.pdb",
+        "lib/netstandard2.0/Grpc.Reflection.xml",
         "packageIcon.png"
       ]
     },
@@ -997,6 +1037,7 @@
     "net7.0": [
       "Google.Protobuf >= 3.22.4",
       "Grpc >= 2.46.6",
+      "Grpc.Reflection >= 2.52.0",
       "Grpc.Tools >= 2.54.0",
       "MongoDB.Driver >= 2.19.1"
     ]
@@ -1052,6 +1093,10 @@
           "Grpc": {
             "target": "Package",
             "version": "[2.46.6, )"
+          },
+          "Grpc.Reflection": {
+            "target": "Package",
+            "version": "[2.52.0, )"
           },
           "Grpc.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
