@@ -52,6 +52,10 @@ public static partial class BlogService
   static readonly grpc::Marshaller<global::ReadBlogRequest> __Marshaller_ReadBlogRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ReadBlogRequest.Parser));
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Marshaller<global::ReadBlogResponse> __Marshaller_ReadBlogResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ReadBlogResponse.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::UpdateBlogRequest> __Marshaller_UpdateBlogRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UpdateBlogRequest.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::UpdateBlogResponse> __Marshaller_UpdateBlogResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UpdateBlogResponse.Parser));
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Method<global::CreateBlogRequest, global::CreateBlogResponse> __Method_CreateBlog = new grpc::Method<global::CreateBlogRequest, global::CreateBlogResponse>(
@@ -68,6 +72,14 @@ public static partial class BlogService
       "ReadBlog",
       __Marshaller_ReadBlogRequest,
       __Marshaller_ReadBlogResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::UpdateBlogRequest, global::UpdateBlogResponse> __Method_UpdateBlog = new grpc::Method<global::UpdateBlogRequest, global::UpdateBlogResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "UpdateBlog",
+      __Marshaller_UpdateBlogRequest,
+      __Marshaller_UpdateBlogResponse);
 
   /// <summary>Service descriptor</summary>
   public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -87,6 +99,12 @@ public static partial class BlogService
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public virtual global::System.Threading.Tasks.Task<global::ReadBlogResponse> ReadBlog(global::ReadBlogRequest request, grpc::ServerCallContext context)
+    {
+      throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::System.Threading.Tasks.Task<global::UpdateBlogResponse> UpdateBlog(global::UpdateBlogRequest request, grpc::ServerCallContext context)
     {
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
@@ -160,6 +178,26 @@ public static partial class BlogService
     {
       return CallInvoker.AsyncUnaryCall(__Method_ReadBlog, null, options, request);
     }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::UpdateBlogResponse UpdateBlog(global::UpdateBlogRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return UpdateBlog(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::UpdateBlogResponse UpdateBlog(global::UpdateBlogRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_UpdateBlog, null, options, request);
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::UpdateBlogResponse> UpdateBlogAsync(global::UpdateBlogRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return UpdateBlogAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::UpdateBlogResponse> UpdateBlogAsync(global::UpdateBlogRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_UpdateBlog, null, options, request);
+    }
     /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     protected override BlogServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -175,7 +213,8 @@ public static partial class BlogService
   {
     return grpc::ServerServiceDefinition.CreateBuilder()
         .AddMethod(__Method_CreateBlog, serviceImpl.CreateBlog)
-        .AddMethod(__Method_ReadBlog, serviceImpl.ReadBlog).Build();
+        .AddMethod(__Method_ReadBlog, serviceImpl.ReadBlog)
+        .AddMethod(__Method_UpdateBlog, serviceImpl.UpdateBlog).Build();
   }
 
   /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -187,6 +226,7 @@ public static partial class BlogService
   {
     serviceBinder.AddMethod(__Method_CreateBlog, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::CreateBlogRequest, global::CreateBlogResponse>(serviceImpl.CreateBlog));
     serviceBinder.AddMethod(__Method_ReadBlog, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ReadBlogRequest, global::ReadBlogResponse>(serviceImpl.ReadBlog));
+    serviceBinder.AddMethod(__Method_UpdateBlog, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UpdateBlogRequest, global::UpdateBlogResponse>(serviceImpl.UpdateBlog));
   }
 
 }

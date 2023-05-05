@@ -85,6 +85,48 @@ namespace server.Impl
 
 
 
+        public override async Task<UpdateBlogResponse> UpdateBlog(UpdateBlogRequest request, ServerCallContext context)
+        {
+
+            var blogId = request.Blog.Id;
+
+            var filter = new FilterDefinitionBuilder<BsonDocument>().Eq("_id", blogId);
+
+            var result = mongoCollection.Find(filter).FirstOrDefault();
+
+            if (result == null)
+                throw new RpcException(new Status(StatusCode.NotFound, "The blog id" + blogId + " NotFound"));
+
+
+
+            BsonDocument doc = new BsonDocument("author_id", request.Blog.AuthorId)
+                                                .Add("title", request.Blog.Title)
+                                                .Add("content", request.Blog.Content);
+
+            mongoCollection.ReplaceOne(filter, result);
+
+            // Response with Updated Virsion 
+
+            Blog blog = new Blog()
+            {
+                AuthorId = doc.GetValue("author_id").AsString,
+                Content = doc.GetValue("content").AsString,
+                Title = doc.GetValue("title").AsString
+            };
+
+            return new UpdateBlogResponse()
+            {
+                Blog = blog
+            };
+
+
+
+
+
+
+
+        }
+
 
 
     }

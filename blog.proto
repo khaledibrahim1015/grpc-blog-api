@@ -15,7 +15,6 @@ message CreateBlogRequest{
 	Blog blog=1; // will not contain id id => Guid 
 }
 
-
 message CreateBlogResponse{
 	Blog blog=1; // will contain id => retrive blog obj
 }
@@ -33,6 +32,19 @@ message ReadBlogResponse{
 
 
 
+message UpdateBlogRequest{
+	Blog blog=1;
+}
+
+message UpdateBlogResponse{
+	Blog blog=1;
+}
+
+
+
+
+
+
 service BlogService{
 
 
@@ -40,4 +52,7 @@ service BlogService{
 
 
 	rpc ReadBlog(ReadBlogRequest) returns(ReadBlogResponse){}
+
+
+	rpc UpdateBlog(UpdateBlogRequest) returns(UpdateBlogResponse){}
 }

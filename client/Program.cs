@@ -24,7 +24,15 @@ namespace client
 
 
             // 2 - Call BlogService => and call ReadBlog
-            ReadBlogById(channel);
+            //   ReadBlogById(channel);
+
+
+            // 3 - Call BlogService => and call UpdateBlog
+            UpdateBlog(channel);
+
+
+
+
 
 
 
@@ -85,5 +93,28 @@ namespace client
 
 
         }
+
+
+        private static void UpdateBlog( Channel channel)
+        {
+            var client = new BlogService.BlogServiceClient(channel);
+            var response = client.UpdateBlog(new UpdateBlogRequest()
+            {
+                Blog = new Blog()
+                {
+                    Id = "",
+                    AuthorId = "Ibra",
+                    Content = "Hello World , this is the Updated blog ",
+                    Title = "Updated Blog !"
+                }
+            });
+            Console.WriteLine(response.Blog.ToString());
+
+
+
+        }
+
+
+
     }
 }
