@@ -53,6 +53,14 @@ message DeleteBlogResponse{
 
 
 
+message ListBlogRequest{
+
+}
+message ListBlogResponse{
+	Blog blog=1;
+}
+
+
 service BlogService{
 
 
@@ -66,4 +74,8 @@ service BlogService{
 
 
 	rpc DeleteBlog(DeleteBlogRequest)returns(DeleteBlogResponse){}
+
+
+	rpc ListBlog(ListBlogRequest) returns( stream ListBlogResponse){}
+
 }
