@@ -20,8 +20,11 @@ namespace client
 
 
             // 1 - Call BlogService => and call CreateBlog 
-               CreateNewBlog(channel);
+            //   CreateNewBlog(channel);
 
+
+            // 2 - Call BlogService => and call ReadBlog
+            ReadBlogById(channel);
 
 
 
@@ -54,6 +57,33 @@ namespace client
             });
 
             Console.WriteLine("The Blog " + BlogResponse.Blog.Id + " Was Created");
+        }
+
+
+
+        private static void ReadBlogById(Channel channel)
+        {
+
+            var client = new BlogService.BlogServiceClient(channel);
+
+            try
+            {
+                var response = client.ReadBlog(new ReadBlogRequest()
+                {
+                    BlogId = "6454668fc20bdaa2049332c2"
+                });
+
+                Console.WriteLine($"The Blog {response.Blog.AuthorId} {response.Blog.Title} {response.Blog.Content}");
+            }
+            catch (RpcException e ) when(e.StatusCode == StatusCode.NotFound)
+            {
+
+                Console.WriteLine("Error" + e.Status.Detail);
+            }
+            
+           
+
+
         }
     }
 }
