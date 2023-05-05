@@ -114,6 +114,7 @@ namespace server.Impl
                 Title = doc.GetValue("title").AsString
             };
 
+            blog.Id = blogId;
             return new UpdateBlogResponse()
             {
                 Blog = blog
@@ -128,6 +129,29 @@ namespace server.Impl
         }
 
 
+
+
+        public override async  Task<DeleteBlogResponse> DeleteBlog(DeleteBlogRequest request, ServerCallContext context)
+        {
+
+            var blogId = request.BlogId;
+
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", new ObjectId( blogId));
+
+           var result = mongoCollection.DeleteOne(filter);
+
+            if (result.DeletedCount == 0)
+                throw new RpcException(new Status(StatusCode.NotFound, " The Blog with " + blogId + " Not Found"));
+
+            return new DeleteBlogResponse()
+            {
+                BlogId = blogId
+            };
+
+
+
+
+        }
 
     }
 }

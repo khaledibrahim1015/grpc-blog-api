@@ -28,12 +28,12 @@ namespace client
 
 
             // 3 - Call BlogService => and call UpdateBlog
-            UpdateBlog(channel);
+            //     UpdateBlog(channel);
 
 
+            // 4 -  Call BlogService => and call DeleteBlog
 
-
-
+            DeleteBlog(channel);
 
 
 
@@ -98,23 +98,61 @@ namespace client
         private static void UpdateBlog( Channel channel)
         {
             var client = new BlogService.BlogServiceClient(channel);
-            var response = client.UpdateBlog(new UpdateBlogRequest()
+
+            try
             {
-                Blog = new Blog()
+                var response = client.UpdateBlog(new UpdateBlogRequest()
                 {
-                    Id = "",
-                    AuthorId = "Ibra",
-                    Content = "Hello World , this is the Updated blog ",
-                    Title = "Updated Blog !"
-                }
-            });
-            Console.WriteLine(response.Blog.ToString());
+                    Blog = new Blog()
+                    {
+                        Id = "6454668fc20bdaa2049332c2",
+                        AuthorId = "Ibra",
+                        Content = "Hello World , this is the Updated blog ",
+                        Title = "Updated Blog !"
+                    }
+                });
+                Console.WriteLine(response.Blog.ToString());
+            }
+            catch (RpcException e)
+            {
+
+                Console.WriteLine(e.Status.Detail);
+            }
+            
 
 
 
         }
 
 
+
+
+
+
+        private static void DeleteBlog(Channel channel)
+        {
+            var client = new BlogService.BlogServiceClient(channel);
+
+            try
+            {
+
+             var response =    client.DeleteBlog(new DeleteBlogRequest()
+                {
+                    BlogId = "6454668fc20bdaa2049332c2"
+                });
+
+                Console.WriteLine("Deleted Blog Id: "+response.BlogId);
+            }
+            catch (RpcException e)
+            {
+
+                Console.WriteLine(e.Status.Detail);
+            }
+
+
+
+
+        }
 
     }
 }

@@ -43,6 +43,14 @@ message UpdateBlogResponse{
 
 
 
+message DeleteBlogRequest{
+	string blog_id=1;
+}
+
+message DeleteBlogResponse{
+	string blog_id=1;
+}
+
 
 
 service BlogService{
@@ -55,4 +63,7 @@ service BlogService{
 
 
 	rpc UpdateBlog(UpdateBlogRequest) returns(UpdateBlogResponse){}
+
+
+	rpc DeleteBlog(DeleteBlogRequest)returns(DeleteBlogResponse){}
 }
